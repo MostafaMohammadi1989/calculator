@@ -4,13 +4,12 @@ import './button.css';
 class Button extends Component {
 
     render() { 
+        let classes = this.props.style || ''
+        classes = `btn ${classes}`
         return ( 
-            <button className='btn'>
+            <button className={classes}>
                 {this.props.title} 
             </button>
-            // <input className='text'>
-
-            // </input>
          );
     }
 }

@@ -1,12 +1,12 @@
+.grid-container {
+    display: grid;
+    
+}
+
 .text {
     margin: 5px;
     height: 2em;
     width: 232px;
-}
-
-.zero {
-    display: inline;
-    padding: 10px;
 }
 
 .point {

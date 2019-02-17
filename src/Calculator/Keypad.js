@@ -6,7 +6,7 @@ class Keypad extends Component {
 
     render() {
         return (
-            <div>
+            <div className='grid-container'>
                 <div>
                     <input type='text' className='text'></input>
                 </div>
@@ -43,18 +43,15 @@ class Keypad extends Component {
                         title={"/"} />
                 </div>
 
-                <div className='zero'>
+                <div>
                     <Button
+                        style={'zero'}
                         title={"0"} />
-                </div>
-
-                <div className='point'>
                     <Button
                         title={"."} />
                     <Button
                         title={"*"} />
                 </div>
-
             </div>
         );
     }
