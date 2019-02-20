@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import './button.css';
+import './keypad.css';
 
 class Button extends Component {
 
-    render() { 
+    render() {
         let classes = this.props.style || ''
         classes = `btn ${classes}`
-        return ( 
+
+        return (
             <button className={classes}>
-                {this.props.title} 
+                {this.props.title}
             </button>
-         );
+        );
     }
 }
- 
+
 export default Button;

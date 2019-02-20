@@ -6,18 +6,20 @@ class Keypad extends Component {
 
     render() {
         return (
-            <div className='grid-container'>
+            <div className='grid-container keypad'>
                 <div>
-                    <input type='text' className='text'></input>
+                    <input type='text' className='text' placeholder='0'></input>
                 </div>
                 <div>
                     <Button
-                        title={"1"} />
+                        title={"1"}
+                        value='1' />
                     <Button
                         title={"2"} />
                     <Button
                         title={"3"} />
                     <Button
+                        style={'plus'}
                         title={"+"} />
                 </div>
 
@@ -29,6 +31,7 @@ class Keypad extends Component {
                     <Button
                         title={"6"} />
                     <Button
+                        style={'minus'}
                         title={"-"} />
                 </div>
 
@@ -40,6 +43,7 @@ class Keypad extends Component {
                     <Button
                         title={"9"} />
                     <Button
+                        style={'division'}
                         title={"/"} />
                 </div>
 
@@ -50,7 +54,20 @@ class Keypad extends Component {
                     <Button
                         title={"."} />
                     <Button
+                        style={'stroke'}
                         title={"*"} />
+                </div>
+
+                <div>
+                    <Button
+                        style={'equal'}
+                        title={"="} />
+                </div>
+
+                <div>
+                    <Button
+                        style={'clear'}
+                        title={"C"} />
                 </div>
             </div>
         );

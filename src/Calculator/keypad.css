@@ -1,14 +1,17 @@
 .grid-container {
-    display: grid;
-    
+    border: 5px;    
+}
+
+.keypad {
+    border: 5px;
+    color: red;
 }
 
 .text {
     margin: 5px;
     height: 2em;
     width: 232px;
-}
-
-.point {
-    display: inline;
+    background-color: rgb(187, 173, 173);
+    color: black;
+    font-size: 15px;
 }
