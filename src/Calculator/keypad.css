@@ -1,17 +1,93 @@
 .grid-container {
-    border: 5px;    
-}
-
-.keypad {
     border: 5px;
-    color: red;
+    width: 400px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+    'input input input input'
+    'clear clear clear division'
+    'seven eight nine times'
+    'four five six subtraction'
+    'one two three plus'
+    'zero zero decimal equal';
 }
 
-.text {
-    margin: 5px;
-    height: 2em;
-    width: 232px;
-    background-color: rgb(187, 173, 173);
-    color: black;
+.grid-container button {
+    padding: 10px;
+    font-weight: 500;
     font-size: 15px;
+}
+
+.input {
+    grid-area: input;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.subtraction {
+    grid-area: subtraction;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.division {
+    grid-area: division;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.decimal {
+    grid-area: decimal;
+}
+
+.times {
+    grid-area: times;
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.clear {
+    grid-area: clear;
 }

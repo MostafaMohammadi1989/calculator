@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './keypad.css'
-import './button.css';
 
 
 class Keypad extends Component {
@@ -9,91 +8,131 @@ class Keypad extends Component {
         inputValue: ''
     }
 
-    handleValueChange = (num) => {
-        let value = this.state.inputValue + ' ' + num;
-        this.setState({ inputValue: value })
+    buttonOnClick = (num) => {
+        const temp = this.state.inputValue + num
+        this.setState({ inputValue: temp })
     }
 
-    handleEqual = () => {
-        let value = eval(this.state.inputValue)
-        this.setState({ inputValue: value })
+    equalOnClick = () => {
+        const result = eval(this.state.inputValue)
+        this.setState({ inputValue: result })
     }
 
-    handleclear = () => {
-        this.setState({ inputValue: ' ' });
+    clearOnClick = () => {
+        this.setState({ inputValue: '' })
     }
+
     render() {
         return (
-            <div className='grid-container keypad'>
-                <div>
-                    <input
-                        defaultValue={this.state.inputValue}
-                        type='text'
-                        className='text'
-                        placeholder='0'>
-                    </input>
-                </div>
-                <div>
-                    <button
-                        onClick= {() => this.handleValueChange('1')}
-                        title={"1"}
-                        value='1' />
-                    <button
-                        title={"2"} />
-                    <button
-                        title={"3"} />
-                    <button
-                        style={'plus'}
-                        title={"+"} />
-                </div>
+            <div className='grid-container'>
+                
+                <input
+                    defaultValue={this.state.inputValue}
+                    className='input'
+                />
+                
+                <button
+                    className='one'
+                    onClick={ () => this.buttonOnClick('1') }
+                >1
+                </button>
 
-                <div>
-                    <button
-                        title={"4"} />
-                    <button
-                        title={"5"} />
-                    <button
-                        title={"6"} />
-                    <button
-                        style={'minus'}
-                        title={"-"} />
-                </div>
+                <button
+                    className='two'
+                    onClick={ () => this.buttonOnClick('2') }
+                >2
+                </button>
 
-                <div>
-                    <button
-                        title={"7"} />
-                    <button
-                        title={"8"} />
-                    <button
-                        title={"9"} />
-                    <button
-                        style={'division'}
-                        title={"/"} />
-                </div>
+                <button
+                    className='three'
+                    onClick={ () => this.buttonOnClick('3') }
+                >3
+                </button>
 
-                <div>
-                    <button
-                        style={'zero'}
-                        title={"0"} />
-                    <button
-                        title={"."} />
-                    <button
-                        style={'stroke'}
-                        title={"*"} />
-                </div>
+                <button
+                    className='plus'
+                    onClick={ () => this.buttonOnClick('+') }
+                >+
+                </button>
+                
+                <button
+                    className='four'
+                    onClick={ () => this.buttonOnClick('4') }
+                >4
+                </button>
 
-                <div>
-                    <button
-                        style={'equal'}
-                        title={"="} />
-                </div>
+                <button
+                    className='five'
+                    onClick={ () => this.buttonOnClick('5') }
+                >5
+                </button>
 
-                <div>
-                    <button
-                        onClick={() => this.handleclear('C')}
-                        style={'clear'}
-                        title={"C"} />
-                </div>
+                <button
+                    className='six'
+                    onClick={ () => this.buttonOnClick('6') }
+                >6
+                </button>
+
+                <button
+                    className='subtraction'
+                    onClick={ () => this.buttonOnClick('-') }
+                >-
+                </button>
+                
+                <button
+                    className='seven'
+                    onClick={ () => this.buttonOnClick('7') }
+                >7
+                </button>
+
+                <button
+                    className='eight'
+                    onClick={ () => this.buttonOnClick('8') }
+                >8
+                </button>
+
+                <button
+                    className='nine'
+                    onClick={ () => this.buttonOnClick('9') }
+                >9
+                </button>
+
+                <button
+                    className='division'
+                    onClick={ () => this.buttonOnClick('/') }
+                >/
+                </button>
+            
+                <button
+                    className='zero'
+                    onClick={ () => this.buttonOnClick('0') }
+                >0
+                </button>
+
+                <button
+                    className='decimal'
+                    onClick={ () => this.buttonOnClick('.') }
+                >.
+                </button>
+
+                <button
+                    className='times'
+                    onClick={ () => this.buttonOnClick('*') }
+                >x
+                </button>       
+
+                <button
+                    className='equal'
+                    onClick={ () => this.equalOnClick() }
+                >=
+                </button>
+
+                <button
+                    className='clear'
+                    onClick={ () => this.clearOnClick() }
+                >AC
+                </button>
+                
             </div>
         );
     }
