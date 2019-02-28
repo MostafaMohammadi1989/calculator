@@ -3,13 +3,14 @@ import './button.css';
 import './keypad.css';
 
 class Button extends Component {
-
+      
     render() {
         let classes = this.props.style || ''
         classes = `btn ${classes}`
 
         return (
-            <button className={classes}>
+            <button className={classes}
+            >
                 {this.props.title}
             </button>
         );

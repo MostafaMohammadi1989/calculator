@@ -1,71 +1,96 @@
 import React, { Component } from 'react';
-import Button from './Button';
 import './keypad.css'
+import './button.css';
+
 
 class Keypad extends Component {
 
+    state = {
+        inputValue: ''
+    }
+
+    handleValueChange = (num) => {
+        let value = this.state.inputValue + ' ' + num;
+        this.setState({ inputValue: value })
+    }
+
+    handleEqual = () => {
+        let value = eval(this.state.inputValue)
+        this.setState({ inputValue: value })
+    }
+
+    handleclear = () => {
+        this.setState({ inputValue: ' ' });
+    }
     render() {
         return (
             <div className='grid-container keypad'>
                 <div>
-                    <input type='text' className='text' placeholder='0'></input>
+                    <input
+                        defaultValue={this.state.inputValue}
+                        type='text'
+                        className='text'
+                        placeholder='0'>
+                    </input>
                 </div>
                 <div>
-                    <Button
+                    <button
+                        onClick= {() => this.handleValueChange('1')}
                         title={"1"}
                         value='1' />
-                    <Button
+                    <button
                         title={"2"} />
-                    <Button
+                    <button
                         title={"3"} />
-                    <Button
+                    <button
                         style={'plus'}
                         title={"+"} />
                 </div>
 
                 <div>
-                    <Button
+                    <button
                         title={"4"} />
-                    <Button
+                    <button
                         title={"5"} />
-                    <Button
+                    <button
                         title={"6"} />
-                    <Button
+                    <button
                         style={'minus'}
                         title={"-"} />
                 </div>
 
                 <div>
-                    <Button
+                    <button
                         title={"7"} />
-                    <Button
+                    <button
                         title={"8"} />
-                    <Button
+                    <button
                         title={"9"} />
-                    <Button
+                    <button
                         style={'division'}
                         title={"/"} />
                 </div>
 
                 <div>
-                    <Button
+                    <button
                         style={'zero'}
                         title={"0"} />
-                    <Button
+                    <button
                         title={"."} />
-                    <Button
+                    <button
                         style={'stroke'}
                         title={"*"} />
                 </div>
 
                 <div>
-                    <Button
+                    <button
                         style={'equal'}
                         title={"="} />
                 </div>
 
                 <div>
-                    <Button
+                    <button
+                        onClick={() => this.handleclear('C')}
                         style={'clear'}
                         title={"C"} />
                 </div>
